@@ -8,7 +8,7 @@ Window {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    title: qsTr("Network Configuration App")
 
     property string allConfigsText: ""
 
@@ -31,6 +31,13 @@ Window {
 
             width: flickable.width
 
+            Button {
+                text: qsTr("All Configs")
+                font.pointSize: 12
+
+                onClicked: refreshAllConfigs()
+            }
+
             TextEdit {
                 Layout.fillWidth: true
 
@@ -40,13 +47,6 @@ Window {
                 text: allConfigsText
                 font.pointSize: 12
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            }
-
-            Button {
-                text: qsTr("All Configs")
-                font.pointSize: 12
-
-                onClicked: refreshAllConfigs()
             }
         }
     }
